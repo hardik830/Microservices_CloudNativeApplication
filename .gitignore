@@ -1,0 +1,6 @@
+# Project exclude paths
+/microservices/section2/loans/target/
+/microservices/section4/accounts/target/
+/microservices/section4/loans/target/
+/microservices/section6/v1-springboot/accounts/target/
+/microservices/section6/v1-springboot/loans/target/
