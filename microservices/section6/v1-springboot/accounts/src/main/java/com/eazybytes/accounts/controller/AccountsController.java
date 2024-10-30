@@ -46,8 +46,8 @@ public class AccountsController {
         this.iAccountsService = iAccountsService;
     }
 
-   @Value("${build.version}")
-   private String buildVersion;
+    @Value("${build.version}")
+    private String buildVersion;
 
     //this environment variable helps to get an information
     //related to the current running environment
