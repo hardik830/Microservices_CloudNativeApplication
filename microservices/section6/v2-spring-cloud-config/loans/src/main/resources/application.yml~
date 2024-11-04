@@ -1,8 +1,8 @@
 server:
-  port: 9000
+  port: 8090
 spring:
   application:
-    name: "cards"
+    name: "loans"
   profiles:
     active:
       - "prod"
@@ -22,12 +22,7 @@ spring:
     show-sql: true
   config:
     import:
-     - "optional:configserver:http://localhost:8071/"
+      - "optional:configserver:http://localhost:8071/"
 
 
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"

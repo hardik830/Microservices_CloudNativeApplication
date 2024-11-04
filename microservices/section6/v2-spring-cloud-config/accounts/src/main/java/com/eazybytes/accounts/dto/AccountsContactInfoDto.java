@@ -1,6 +1,8 @@
 package com.eazybytes.accounts.dto;
 
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.HashMap;
@@ -25,6 +27,10 @@ import java.util.Map;
 //Now during startup spring boot will read my all properties from application.yml
 //and we can use this pojo class inside my business logic
 @ConfigurationProperties(prefix = "accounts")
-public record AccountsContactInfoDto(String message, Map<String, String> contactDetails, List<String> onCallSupport) {
-
+@Getter
+@Setter
+public class AccountsContactInfoDto {
+    private String message;
+    private Map<String,String> contactDetails;
+    private List<String> onCallSupport;
 }
