@@ -1,0 +1,31 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: "loans"
+  profiles:
+    active:
+      - "prod"
+
+  datasource:
+    url: jdbc:mysql://localhost:3308/loansdb
+    username: root
+    password: root
+    jpa:
+      #    this property telling to spring boot execute the sql script in the accountsdb which is present ins schema.sql
+    sql:
+      init:
+        mode: always
+  config:
+    import:
+      - "optional:configserver:http://localhost:8071/"
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
