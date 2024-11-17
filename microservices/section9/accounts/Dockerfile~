@@ -1,0 +1,16 @@
+#Start with a base image containing Java runtime
+FROM openjdk:21-jdk-slim
+
+# MAINTAINER instruction is deprecated in favor of using label
+# MAINTAINER eazybytes.com
+#Information around who maintains the image
+LABEL "org.opencontainers.image.authors"="eazybytes.com"
+
+# Add the application's jar to the image
+#trying to copy jar file from local machine to the Docker Image
+COPY target/accounts-0.0.1-SNAPSHOT.jar accounts-0.0.1-SNAPSHOT.jar
+
+# execute the application
+#it is the same command that we use to start the spring boot application using the jar file
+# here we dont resquire to add the target path complete beacuse we adding to the accounts-0.0.1-SNAPSHOT.jar this file 
+ENTRYPOINT ["java", "-jar", "accounts-0.0.1-SNAPSHOT.jar"]
